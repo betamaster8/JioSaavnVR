@@ -1,13 +1,5 @@
 ## JioSaavn API [Unofficial]
 
-### Show some :heart: and :star: the repo to support the project
-
-[![GitHub stars](https://img.shields.io/github/stars/cyberboysumanjay/jiosaavnapi.svg?style=social&label=Star)](https://github.com/cyberboysumanjay/JioSaavnAPI) ![GitHub followers](https://img.shields.io/github/followers/cyberboysumanjay.svg?style=social&label=Follow)
-[![Telegram Channel](https://img.shields.io/badge/Telegram-Channel-orange)](https://t.me/sjprojects)
-[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
-
-#### JioSaavn API written in Python using Flask  
-
  ---
 ###### **NOTE:** You don't need to have JioSaavn link of the song in order to fetch the song details, you can directly search songs by their name. Fetching Songs/Albums/Playlists from URL is also supported in this API.  
 
@@ -66,7 +58,7 @@
 
 Clone this repository using
 ```sh
-$ git clone https://github.com/cyberboysumanjay/JioSaavnAPI
+$ git clone https://github.com/betamaster8/JioSaavnVR
 ```
 Enter the directory and install all the requirements using
 ```sh
@@ -76,7 +68,7 @@ Run the app using
 ```sh
 $ python3 app.py
 ```
-Navigate to 127.0.0.1:5000 to see the Homepage
+Navigate to 127.0.0.1:5100 to see the Homepage
 
 ### **Usage**:
 Fetching lyrics is optional and is triggered only when it is passed as an argument in the GET Request. (**&lyrics=true**)
@@ -85,9 +77,9 @@ Fetching lyrics is optional and is triggered only when it is passed as an argume
 ---
 ##### **Universal Endpoint**: (Supports Song Name, Song Link, Album Link, Playlist Link)
 ```sh
-http://127.0.0.1:5000/result/?query=<insert-jiosaavn-link-or-query-here>&lyrics=true
+http://127.0.0.1:5100/result/?query=<insert-jiosaavn-link-or-query-here>&lyrics=true
 ```
-**Example:** Navigate to http://127.0.0.1:5000/result/?query=alone to get a JSON response of songs data in return.
+**Example:** Navigate to http://127.0.0.1:5100/result/?query=alone to get a JSON response of songs data in return.
 
 ----
 
@@ -96,7 +88,7 @@ http://127.0.0.1:5000/result/?query=<insert-jiosaavn-link-or-query-here>&lyrics=
 ```sh
 http://127.0.0.1:5000/song/?query=<insert-jiosaavn-song-link>&lyrics=true
 ```
-**Example:** Navigate to http://127.0.0.1:5000/song/?query=https://www.jiosaavn.com/song/khairiyat/PwAFSRNpAWw to get a JSON response of song data in return.
+**Example:** Navigate to http://127.0.0.1:5100/song/?query=https://www.jiosaavn.com/song/khairiyat/PwAFSRNpAWw to get a JSON response of song data in return.
 
 ---
 
@@ -104,7 +96,7 @@ http://127.0.0.1:5000/song/?query=<insert-jiosaavn-song-link>&lyrics=true
 ```sh
 http://127.0.0.1:5000/playlist/?query=<insert-jiosaavn-playlist-link>&lyrics=true
 ```
-**Example:** Navigate to http://127.0.0.1:5000/playlist/?query=https://www.jiosaavn.com/featured/romantic-hits-2020---hindi/ABiMGqjovSFuOxiEGmm6lQ__ to get a JSON response of playlist data in return.
+**Example:** Navigate to http://127.0.0.1:5100/playlist/?query=https://www.jiosaavn.com/featured/romantic-hits-2020---hindi/ABiMGqjovSFuOxiEGmm6lQ__ to get a JSON response of playlist data in return.
 
 ---
 
@@ -112,7 +104,7 @@ http://127.0.0.1:5000/playlist/?query=<insert-jiosaavn-playlist-link>&lyrics=tru
 ```sh
 http://127.0.0.1:5000/album/?query=<insert-jiosaavn-album-link>&lyrics=true
 ```
-**Example:** Navigate to http://127.0.0.1:5000/album/?query=https://www.jiosaavn.com/album/chhichhore/V4F3M5,cNb4_ to get a JSON response of album data in return.
+**Example:** Navigate to http://127.0.0.1:5100/album/?query=https://www.jiosaavn.com/album/chhichhore/V4F3M5,cNb4_ to get a JSON response of album data in return.
 
 ---
 
@@ -124,20 +116,3 @@ http://127.0.0.1:5000/lyrics/?query=<insert-jiosaavn-song-link-or-song-id>&lyric
 
 ---
 
-#### You can fork the repo and deploy on VPS or deploy it on Heroku :)  
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/cyberboysumanjay/JioSaavnAPI/tree/master)
-
-**Note:** Heroku gives US/Europe servers which won't be able to fetch all songs flawlessly. Use any Indian VPS for accurate results.
-
----
-
-## **Made using this API** :heart:
-#### [Musify](https://github.com/Harsh-23/Musify/releases) - Android App
-#### [@songdl_bot](https://telegram.dog/songdl_bot) - Song Downloader Bot on Telegram
-#### [Jio-Saavn-Downloader [Beta]](https://jiosaavn.netlify.app/) - [Open Sourced](https://github.com/ParveenBhadooOfficial/Jio-Saavn-Downloader) website made by [Praveen Bhadoo](https://github.com/ParveenBhadooOfficial)
-#### [Musicder](https://musicder.tk/) - [Open Sourced](https://github.com/cachecleanerjeet/Musicder) website made by [Tuhin Pal](https://github.com/cachecleanerjeet)
-#### [Music_Downloader_CLI](https://github.com/thehamkercat/Music_Downloader_CLI) made by [TheHamkerCat](https://github.com/thehamkercat)
-#### Star the Repo in case you liked it :)
-
-### © [Sumanjay](https://cyberboysumanjay.github.io)
