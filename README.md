@@ -86,7 +86,7 @@ http://127.0.0.1:5100/result/?query=<insert-jiosaavn-link-or-query-here>&lyrics=
 
 ##### **Song URL Endpoint**:
 ```sh
-http://127.0.0.1:5000/song/?query=<insert-jiosaavn-song-link>&lyrics=true
+http://127.0.0.1:5100/song/?query=<insert-jiosaavn-song-link>&lyrics=true
 ```
 **Example:** Navigate to http://127.0.0.1:5100/song/?query=https://www.jiosaavn.com/song/khairiyat/PwAFSRNpAWw to get a JSON response of song data in return.
 
@@ -94,7 +94,7 @@ http://127.0.0.1:5000/song/?query=<insert-jiosaavn-song-link>&lyrics=true
 
 ##### **Playlist URL Endpoint**:
 ```sh
-http://127.0.0.1:5000/playlist/?query=<insert-jiosaavn-playlist-link>&lyrics=true
+http://127.0.0.1:5100/playlist/?query=<insert-jiosaavn-playlist-link>&lyrics=true
 ```
 **Example:** Navigate to http://127.0.0.1:5100/playlist/?query=https://www.jiosaavn.com/featured/romantic-hits-2020---hindi/ABiMGqjovSFuOxiEGmm6lQ__ to get a JSON response of playlist data in return.
 
@@ -102,7 +102,7 @@ http://127.0.0.1:5000/playlist/?query=<insert-jiosaavn-playlist-link>&lyrics=tru
 
 ##### **Album URL Endpoint**:
 ```sh
-http://127.0.0.1:5000/album/?query=<insert-jiosaavn-album-link>&lyrics=true
+http://127.0.0.1:5100/album/?query=<insert-jiosaavn-album-link>&lyrics=true
 ```
 **Example:** Navigate to http://127.0.0.1:5100/album/?query=https://www.jiosaavn.com/album/chhichhore/V4F3M5,cNb4_ to get a JSON response of album data in return.
 
@@ -110,9 +110,9 @@ http://127.0.0.1:5000/album/?query=<insert-jiosaavn-album-link>&lyrics=true
 
 ##### **Lyrics Endpoint**:
 ```sh
-http://127.0.0.1:5000/lyrics/?query=<insert-jiosaavn-song-link-or-song-id>&lyrics=true
+http://127.0.0.1:5100/lyrics/?query=<insert-jiosaavn-song-link-or-song-id>&lyrics=true
 ```
-**Example:** Navigate to http://127.0.0.1:5000/lyrics/?query=https://www.jiosaavn.com/song/khairiyat/PwAFSRNpAWw to get a JSON response of lyrics data in return.
+**Example:** Navigate to http://127.0.0.1:5100/lyrics/?query=https://www.jiosaavn.com/song/khairiyat/PwAFSRNpAWw to get a JSON response of lyrics data in return.
 
 ---
 
