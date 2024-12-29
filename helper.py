@@ -1,19 +1,26 @@
+# Updated and Edited by BetaMaster 29.12-2024
+# Thanks @cyberboysumonjoy
+
 import base64
 import jiosaavn
 from pyDes import *
 
-
 def format_song(data, lyrics):
     try:
-        data['media_url'] = decrypt_url(data['encrypted_media_url'])
-        if data['320kbps'] != "true":
-            data['media_url'] = data['media_url'].replace(
-                "_320.mp4", "_160.mp4")
-        data['media_preview_url'] = data['media_url'].replace(
-            "_320.mp4", "_96_p.mp4").replace("_160.mp4", "_96_p.mp4").replace("//aac.", "//preview.")
+        decrypted_urls = decrypt_url(data['encrypted_media_url'])
+        data['media_url_320kbps'] = decrypted_urls["320kbps"]
+        data['media_url_160kbps'] = decrypted_urls["160kbps"]
+        data['media_url_128kbps'] = decrypted_urls["128kbps"]
+        data['media_url_96kbps'] = decrypted_urls["96kbps"]
+        data['media_preview_url'] = decrypted_urls["96kbps"].replace("//aac.", "//preview.")
     except KeyError or TypeError:
         url = data['media_preview_url']
         url = url.replace("preview", "aac")
+        data['media_url_320kbps'] = url.replace("_96_p.mp4", "_320.mp4")
+        data['media_url_160kbps'] = url.replace("_96_p.mp4", "_160.mp4")
+        data['media_url_128kbps'] = url.replace("_96_p.mp4", "_128.mp4")
+        data['media_url_96kbps'] = url.replace("_96_p.mp4", "_96.mp4")
+	
         if data['320kbps'] == "true":
             url = url.replace("_96_p.mp4", "_320.mp4")
         else:
@@ -35,7 +42,7 @@ def format_song(data, lyrics):
             data['lyrics'] = None
 
     try:
-        data['copyright_text'] = data['copyright_text'].replace("&copy;", "©")
+        data['copyright_text'] = data['copyright_text'].replace("&copy;", "┬⌐")
     except KeyError:
         pass
     return data
@@ -68,5 +75,15 @@ def decrypt_url(url):
                      pad=None, padmode=PAD_PKCS5)
     enc_url = base64.b64decode(url.strip())
     dec_url = des_cipher.decrypt(enc_url, padmode=PAD_PKCS5).decode('utf-8')
-    dec_url = dec_url.replace("_96.mp4", "_320.mp4")
-    return dec_url
+    
+    url_320 = dec_url.replace("_96.mp4", "_320.mp4")
+    url_160 = dec_url.replace("_96.mp4", "_160.mp4")
+    url_128 = dec_url.replace("_96.mp4", "_128.mp4")
+    url_96 = dec_url.replace("_96.mp4", "_96.mp4")
+    
+    return {
+        "320kbps": url_320,
+        "160kbps": url_160,
+        "128kbps": url_128,
+        "96kbps": url_96
+    }
